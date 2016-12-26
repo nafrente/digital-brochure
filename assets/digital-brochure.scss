@@ -1,0 +1,611 @@
+/* Digital Brochure Styles */
+
+/*Importing the font, this should be removed on implementation*/
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,700);
+
+/* COLORS: */
+$FieldBorders: #CCCCCC;
+$marker: #d93600;
+$defaultStar: #5d5d5d;
+$defaultColor: #333333;
+
+$GlobalBlue: #396FB6;
+$LightBlue: #DBE6F4;
+$BrightGreen: #2ECC71;
+$LightGreen: #CFFFBF;
+$HighlightOrange: #FF7040;
+$LightOrange: #FFD9CC;
+
+$TitleBarGrey: #7E7870;
+$CloseRed: #D93600;
+$ProgressionDarkOrange: #FF9673;
+$ProgressionGreen: #CFFFBF;
+$ProgressionYellow: #FFFF99;
+$ProgressionLightOrange: #FFC926;
+
+//$ProgressionRed
+
+$FieldHighlight: #FFF2D9;
+$FieldWarningBorder: #FF7040;
+
+//TextGrey: #444444
+// Dim / Inactive: 40%
+//GridRecordHover:  #396FB6 @ 15%
+//GridRecordActive: #396FB6 @ 25% 
+
+
+/* Namespace class: .digital-brochure */
+/*Reset*/
+body{
+	margin: 0;
+	height: 100%;
+}
+.digital-brochure{
+    *, *:before, *:after {
+        -webkit-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+    overflow-x:hidden;
+	font-family: 'Arimo', "sans-serif";
+	color: $defaultColor;
+	.clear{display: block; clear: both; height: 1px; width: 100%;}
+
+	header{/* Header Section */
+		padding: 20px 0 0;
+		height: 150px;
+		margin: 0 auto 10px;
+		max-width: 1250px;
+		border-bottom: 2px solid $FieldBorders;
+
+		.db-logo{
+		display: inline-block;
+		}
+		.db-agent{
+			display: inline-block;
+			float: right;
+			.img-content{
+				float: right;
+				height: 150px;
+				overflow: hidden;
+				width: 150px;
+				margin-left: 10px;
+				img{
+					max-height: 100%;
+				}
+			}
+			.txt-content{
+				float: right;
+				.titles{
+					float: right;
+					text-align: center;
+					margin: 0 0 20px;
+					h1{
+
+						font-size: 22px;
+						font-weight: 700;
+						margin: 0 0 5px;
+						display: inline-block;
+					}
+					h4{
+						display: inline-block;
+						font-size: 12px;
+						margin: 0;
+					}
+				}
+
+				p{
+					font-size: 16px;
+					margin: 10px 0;
+					text-align: right;
+				}
+			}
+		}
+	}// End Header
+	
+
+	.db-map{/* Map Section */
+		max-width: 1250px;
+		margin: 0 auto 20px;
+		height: 40vh;
+		background: url(map-placeholder.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		position: relative;
+		.fa-map-marker{
+			cursor: pointer;
+			color: $marker;
+			font-size: 45px;
+			position: relative;
+			top: 90px;
+			left: calc(50% - 10px);
+		}
+	}// End Map Section
+
+
+	.db-properties{/* Property List Section */
+		max-width: 1250px;
+		margin: 0 auto 20px;
+
+		.db-property{
+			display: inline-block;
+			margin: 0 5px 20px;
+			width: calc(33.33% - 15px);
+			-webkit-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.35);
+			-moz-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.35);
+			box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.35);
+			border: 1px solid $FieldBorders;
+			position: relative;
+			.property-link{
+				text-decoration: none;
+				font-family: 'Arimo', "sans-serif";
+				color: $defaultColor;
+			}
+			.top-section{
+				h2{
+					display: inline-block;
+					float: left;
+					margin-left: 15px;
+					font-size: 16px;
+				}
+				.db-star{
+					color: $defaultStar;
+					display: inline-block;
+					float: right;
+					margin-right: 15px;
+					cursor: pointer;
+					position: relative;
+					z-index: 2;
+					.fa-star{
+						font-size: 22px;
+						margin-top: 11px;
+					}
+
+				}
+			}
+			.img-section{
+				text-align: center;
+				img{
+					max-width: 100%;
+				}
+			}
+			.desc-section{
+				color: #6f6f6f;
+				padding: 10px 15px 25px;
+				.line{
+					display: block;
+					width: 100%;
+					margin: 5px 0 0;
+					span{
+						display: inline-block;
+						padding: 0 3px;
+					}
+				}
+			}
+		}
+	}// End Property List Section
+
+	// Internal Page
+
+	.db-gallery-section{/* Property gallery Section */
+		max-width: 1250px;
+		margin: -12px auto 0;
+
+		.above-gallery{
+			background-color: #eeeeee;
+			h1{
+				display: inline-block;
+				font-size: 22px;
+				margin: 20px;
+			}
+			.back-btn{
+				float: right;
+				display: inline-block;
+				padding: 10px 15px;
+				color: $FieldBorders;
+				border: 1px solid $FieldBorders;
+				text-decoration: none;
+				margin: 12px 15px;
+				.fa-arrow-left{
+					font-weight: 700;
+					margin-right: 10px;
+				}
+			}
+			.back-btn:hover{
+				color: $defaultColor;
+			}
+		}
+		.db-gallery{
+			//height: 475px;
+			position: relative;
+			.controllers{
+				display: none;
+				position: absolute;
+				color: #ffffff;
+				font-size: 45px;
+				top: calc(50% - 20px);
+				span{
+					display: inline-block;
+					position: relative;
+					width: 38px;
+					height: 38px;
+					cursor: pointer;
+					border-radius: 100%;
+					-webkit-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.35);
+					-moz-box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.35);
+					box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.35);
+					i{
+						position: relative;
+						top:-6px;
+					}
+				}
+				.left{
+					float: left;
+					margin-left: 10px;
+				}
+				.right{
+					float: right;
+					margin-right: 10px;
+				}
+			}
+			.main-img{
+
+				vertical-align: top;
+				display: inline-block;
+				width: calc(100% - 470px);
+				margin: 0;
+				max-height: 475px;
+				overflow: hidden;
+				img{
+					width: 100%;
+					-webkit-touch-callout: none; /* iOS Safari */
+					-webkit-user-select: none; /* Chrome/Safari/Opera */
+					-khtml-user-select: none; /* Konqueror */
+					-moz-user-select: none; /* Firefox */
+					-ms-user-select: none; /* Internet Explorer/Edge */
+					user-select: none;
+				}
+			}
+			.thumbs{
+				vertical-align: top;
+				max-height: 475px;
+				display: inline-block;
+				width: 110px;
+				margin: 0;
+				overflow-y: auto;
+				overflow-x: hidden;
+				cursor: pointer;
+				img{
+					max-width: 100%;
+					margin: 0 2px;
+				}
+			}
+			.details{
+				vertical-align: top;
+				display: inline-block;
+				width: 341px;
+				margin: 0 0 10px 10px;
+				color: #6f6f6f;
+				font-size: 14px;
+				[class*=block-]{
+					margin: 20px 0;
+					border-bottom: 1px solid #6f6f6f;
+					padding: 10px 0;
+				}
+				.amenities{
+					.list{
+						display: -ms-flexbox;
+						display: -webkit-flex;
+						display: flex;
+						-webkit-flex-direction: column;
+						-ms-flex-direction: column;
+						flex-direction: column;
+						-webkit-flex-wrap: wrap;
+						-ms-flex-wrap: wrap;
+						flex-wrap: wrap;
+						-webkit-justify-content: flex-start;
+						-ms-flex-pack: start;
+						justify-content: flex-start;
+						-webkit-align-content: stretch;
+						-ms-flex-line-pack: stretch;
+						align-content: stretch;
+						-webkit-align-items: flex-start;
+						-ms-flex-align: start;
+						align-items: flex-start;
+						max-height: 120px;
+						.name{
+							-webkit-order: 0;
+							-ms-flex-order: 0;
+							order: 0;
+							-webkit-flex: 0 1 auto;
+							-ms-flex: 0 1 auto;
+							flex: 0 1 auto;
+							-webkit-align-self: auto;
+							-ms-flex-item-align: auto;
+							align-self: auto;
+						}
+					}
+				}
+
+			}
+
+
+		}
+
+	}// End gallery section
+
+	// Helper classes for Internal page
+	.title{
+		font-weight: 700;
+		display: block;
+		margin: 3px 0;
+	}
+	.inline{
+		.title{
+			font-weight: 700;
+			display: inline-block;
+			margin: 3px 0;
+		}
+	}
+	.line{
+		display: block;
+		margin: 2px 0;
+	}
+	.half{
+		width: 50%;
+		margin: 0 -2px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.one-third{
+		width: 33.34%;
+		margin: 0 -2px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.two-thirds{
+		width: 66.66%;
+		margin: 0 -2px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.db-internal-map{/* Map section */
+		max-width: 1250px;
+		margin: 0 auto;
+
+		.above-map{
+			background-color: #eeeeee;
+			h2{
+				display: inline-block;
+				font-size: 22px;
+				margin: 20px;
+			}
+		}
+
+		.map{
+			height: 40vh;
+			background: url(map-placeholder.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			position: relative;
+			.fa-map-marker{
+				cursor: pointer;
+				color: $marker;
+				font-size: 45px;
+				position: relative;
+				top: 90px;
+				left: calc(50% - 10px);
+			}
+		}
+	}// End Map section
+
+
+	.db-unities{/* Unities section */
+		max-width: 1250px;
+		margin: -3px auto 15px;
+		.unities-title{
+			background-color: #eeeeee;
+			margin-bottom: 15px;
+			h2{
+				display: inline-block;
+				font-size: 22px;
+				margin: 20px;
+			}
+		}
+		.db-unity{
+			margin: 20px;
+			.unity-img{
+				overflow: hidden;
+				img{
+					max-width: calc(100% - 15px);
+				}
+			}
+			.unity-description{
+				color: #6f6f6f;
+				font-size: 14px;
+				h3{
+					font-size: 18px;
+				}
+			}
+			.feature-box{
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				-webkit-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+				-webkit-justify-content: flex-start;
+				-ms-flex-pack: start;
+				justify-content: flex-start;
+				-webkit-align-content: stretch;
+				-ms-flex-line-pack: stretch;
+				align-content: stretch;
+				-webkit-align-items: flex-start;
+				-ms-flex-align: start;
+				align-items: flex-start;
+				max-height: 120px;
+				.feature{
+					-webkit-order: 0;
+					-ms-flex-order: 0;
+					order: 0;
+					-webkit-flex: 0 1 auto;
+					-ms-flex: 0 1 auto;
+					flex: 0 1 auto;
+					-webkit-align-self: auto;
+					-ms-flex-item-align: auto;
+					align-self: auto;
+				}
+			}
+		}
+	}// End Unities section
+
+	footer{/* Footer Section */
+		max-width: 1250px;
+		margin: 20px auto 15px;
+		padding: 0 50px;
+		.one-third{
+			text-align: center;
+			p{
+				font-weight: 700;
+				margin: 10px 0 0;
+			}
+			span{
+				font-size: 10px;
+				display: block;
+			}
+		}
+		.one-third:first-child{
+			text-align: left;
+		}
+		.one-third:nth-child(3){
+			text-align: right;
+		}
+		.copy{
+			text-align: center;
+			margin: 10px 0;
+			font-size: 13px;
+		}
+	}
+}
+
+
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 1270px) {
+	.digital-brochure{
+		header, .db-properties{
+			margin: 0 20px 20px !important;
+		}
+		.db-gallery-section{
+			margin: -22px auto 0;
+		}
+	}
+}
+@media screen and (max-width: 1250px) {
+	.digital-brochure {
+		.db-gallery-section .db-gallery .thumbs{
+			display: none;
+		}
+		.db-gallery-section .db-gallery .main-img{
+			width: calc(100% - 356px);
+		}
+		.db-gallery-section .db-gallery .controllers{
+			display: block;
+			width: calc(100% - 356px);
+		}
+	}
+}
+@media screen and (max-width: 767px) {
+	.digital-brochure {
+		header .db-agent .img-content{
+		display: none;
+		}
+		.db-properties .db-property{
+			width: 90%;
+			display: block;
+			margin: 0 auto 20px;
+		}
+		.db-gallery-section {
+			.db-gallery {
+				.controllers{
+					width: 100%;
+					top:220px;
+				}
+				.main-img{
+					width: 100%;
+				}
+				.details{
+					width: 95%;
+					margin: 0 auto;
+					padding: 0 20px 20px;
+				}
+			}
+		}
+		.db-unities .db-unity .unity-img{
+			width: calc(100% - 40px);
+		}
+		.db-unities .db-unity .unity-description{
+			width: calc(100% - 40px);
+		}
+		footer{
+			padding: 0 20px;
+		}
+	}
+
+}
+@media screen and (max-width: 550px) {
+	.digital-brochure {
+		.db-properties .db-property{
+			width: 100%;
+		}
+		.db-gallery-section .above-gallery{
+			padding: 10px 0;
+			text-align: center;
+			.back-btn{
+				float: none;
+				display: block;
+				margin: 12px auto;
+				width: 140px;
+			}
+		}
+		header{
+			height: 250px;
+			.db-logo{
+				width: 100%;
+				text-align: center;
+			}
+			.db-agent{
+				float: none;
+				text-align: center;
+				width: 100%;
+				.txt-content{
+					float: none;
+					.titles{
+						float: none;
+						margin: 0 0 10px;
+					}
+					p{
+						text-align: center;
+					}
+				}
+			}
+		}
+		.db-gallery-section .db-gallery .controllers{
+			top: 130px;
+		}
+		.half, .one-third, .two-thirds {
+			width: calc(100% - 40px) ;
+		}
+		footer .one-third{
+			text-align: center !important;
+			width: 100%;
+		}
+	}
+
+}

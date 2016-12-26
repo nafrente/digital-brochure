@@ -214,45 +214,8 @@
 
     </div>
 
-
-
-<!-- JAVASCRIPT CONTROLS -->
-<script type="text/javascript">
-$( document ).ready(function() {
-    var currentImg = 0;
-    $('.digital-brochure .db-gallery-section .db-gallery .thumbs img').on('click', function (event) {
-        var imgPath = $(this)[0].src; //+ '?' + Math.floor( Math.random() * 100 + 1);
-        $('.digital-brochure .db-gallery-section .db-gallery .main-img img').attr("src", imgPath );
-        currentImg = imgListSrc.indexOf(imgPath);
-    });
-
-    var imgList = $('.digital-brochure .db-gallery-section .db-gallery .thumbs img');
-    var imgListSrc = [];
-    for(var i = 0; i< imgList.length; i++){
-        imgListSrc.push(imgList[i].src);
-    }
-
-    $('.digital-brochure .db-gallery-section .db-gallery .controllers .left').on('click', function (event) {
-        if (currentImg == 0){
-            $('.digital-brochure .db-gallery-section .db-gallery .main-img img').attr("src", imgListSrc[imgListSrc.length -1] );
-            currentImg = imgListSrc.length -1;
-        }else {
-            $('.digital-brochure .db-gallery-section .db-gallery .main-img img').attr("src", imgListSrc[currentImg -1] );
-            currentImg = currentImg -1;
-        }
-    });
-    $('.digital-brochure .db-gallery-section .db-gallery .controllers .right').on('click', function (event) {
-        if (currentImg == imgListSrc.length -1){
-            $('.digital-brochure .db-gallery-section .db-gallery .main-img img').attr("src", imgListSrc[0] );
-            currentImg = 0;
-        }else {
-            $('.digital-brochure .db-gallery-section .db-gallery .main-img img').attr("src", imgListSrc[currentImg +1] );
-            currentImg = currentImg +1;
-        }
-    });
-
-});
-</script>
+<!-- JAVASCRIPT -->
+<script type="text/javascript" src="assets/main.js"></script>
 </body>
 <!-- end body output -->
 </html>

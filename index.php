@@ -69,6 +69,21 @@
                         <div class="line">
                             <span>Beds/Baths</span> | <span>Sqft</span> | <span>Low rent - High Rent</span>
                         </div>
+                        <div class="line">
+                            <span>Beds/Baths</span> | <span>Sqft</span> | <span>Low rent - High Rent</span>
+                        </div>
+                        <div class="line">
+                            <span>Beds/Baths</span> | <span>Sqft</span> | <span>Low rent - High Rent</span>
+                        </div>
+                        <div class="line">
+                            <span>Beds/Baths</span> | <span>Sqft</span> | <span>Low rent - High Rent</span>
+                        </div>
+                        <div class="line">
+                            <span>Beds/Baths</span> | <span>Sqft</span> | <span>Low rent - High Rent</span>
+                        </div>
+                        <div class="line">
+                            <span>Beds/Baths</span> | <span>Sqft</span> | <span>Low rent - High Rent</span>
+                        </div>
                     </div>
                 </a>
             </article>
